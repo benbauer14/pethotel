@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AddPet from '../AddPet/AddPet';
 import {useSelector} from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
 
@@ -22,6 +23,7 @@ function Pet(props) {
 
   return (
     <div style={{ height: 400, width: '100%' }}>
+      <AddPet />
       <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
     </div>
   );

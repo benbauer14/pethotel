@@ -7,12 +7,12 @@ function Nav (){
             <h1>Pet Hotel</h1>
             <div className="navbar">
                 <div className="navBox">
-                    <Link to="/pets">
+                    <Link to="/pet">
                         <p>Dashboard</p>
                     </Link>
                 </div>
                 <div className="navBox">
-                    <Link to="/pets">
+                    <Link to="/owner">
                         <p>Owner</p>
                     </Link>
                 </div>

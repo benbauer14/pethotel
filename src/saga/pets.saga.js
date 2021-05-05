@@ -5,7 +5,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* getPet() {
 
   try {
-    const response = yield axios.get('/api/pets');
+    const response = yield axios.get('/api/pets/');
     yield put({ type:'SET_PETS', payload: response.data})
   } catch (error) {
     console.log('Pet GET request failed', error);
