@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
 import AddPet from '../AddPet/AddPet';
-import {useSelector} from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
 import React, { useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
@@ -35,6 +33,7 @@ const dispatch = useDispatch()
       <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
     </div>
   );
+}
 }
 
 export default Pet;
