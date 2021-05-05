@@ -7,7 +7,7 @@ function Pet(props) {
 
   return (
     <div>
-      <h2>This is Pet</h2>
+      <h2>This is Pett</h2>
     </div>
   );
 }
