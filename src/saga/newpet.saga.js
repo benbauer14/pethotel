@@ -5,16 +5,15 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* postNewPet(action) {
 
   try {
-
-    const response = yield axios.post('/api/chat/?pet=' + action.pet + '&owner=' + action.owner);
+    yield axios.post('/api/chat/?pet=' + action.pet + '&owner=' + action.owner);
   } catch (error) {
     console.log('Pet POST request failed', error);
   }
 }
 
 
-function* messagesSaga() {
+function* newpetSaga() {
   yield takeLatest('POST_NEWPET', postNewPet);
 }
 
-export default messagesSaga;
+export default newpetSaga;
