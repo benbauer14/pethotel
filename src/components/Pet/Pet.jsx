@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
 import AddPet from '../AddPet/AddPet';
-import {useSelector} from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
+import React, { useState } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
 function Pet(props) {
+
+const pets = useSelector((store) => store.pets)
+const dispatch = useDispatch()
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 90 },
@@ -21,12 +24,16 @@ function Pet(props) {
     { id: '3', owner: 'asdf', pet: 'sdf', breed: 'sdfasdf', color: 'asdf', checkedin: 'no', actions: 'Delete | Check Out'},
   ];
 
+  const getPets = () => {
+    dispatch({type:'FETCH_PET'})
+
   return (
     <div style={{ height: 400, width: '100%' }}>
       <AddPet />
       <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
     </div>
   );
+}
 }
 
 export default Pet;
