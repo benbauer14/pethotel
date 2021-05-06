@@ -1,18 +1,19 @@
+import { ownerDocument } from '@material-ui/core';
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 
-function* postNewPet(action) {
+function* postNewOwner(action) {
 
   try {
-    yield axios.post('/api/pets/', { owner: "1", pet: action.pet, breed: action.breed, color: action.color, checkedin: action.checkedin });
+    yield axios.post( '/api/owners/', action.payload );
   } catch (error) {
-    console.log('Pet POST request failed', error);
+    console.log('Owner POST request failed', error);
   }
 }
 
-function* newpetSaga() {
-  yield takeLatest('POST_NEWPET', postNewPet);
+function* newOwnerSaga() {
+  yield takeLatest('POST_NEWOWNER', postNewOwner);
 }
 
-export default newpetSaga;
+export default newOwnerSaga;
