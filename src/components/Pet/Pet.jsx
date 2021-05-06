@@ -55,7 +55,7 @@ const dispatch = useDispatch()
             thisRow[f] = params.getValue(f);
           });
 
-            return dispatch({type: 'DELETE_PET', payload: {id: thisRow.id} })
+            return dispatch({type: 'DELETE_PET', payload: {id: thisRow.id, pet: thisRow.pet} })
 
         };
   
