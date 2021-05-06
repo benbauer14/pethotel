@@ -123,8 +123,6 @@ const AddPet = () => {
                         </MenuItem>
                     ))}
                 </TextField>
-
-                </form>
                 <Button
                     type="submit"
                     variant="contained"
@@ -133,7 +131,8 @@ const AddPet = () => {
                     >
                     Add
                 </Button>
-            <input type="text" placeholder="Pet Name" onChange={handlePetName} />
+                </form>
+            {/* <input type="text" placeholder="Pet Name" onChange={handlePetName} />
             <input type="text" placeholder="Pet Color" onChange={handlePetColor} />
             <input type="text" placeholder="Pet Breed" onChange={handlePetBreed} />
             <select onChange={handleOwner}>
@@ -142,7 +141,7 @@ const AddPet = () => {
                 <option>Ben</option>
                 <option>Pat</option>
             </select>
-            <button onClick={()=>addPet( tempPet )}>Add</button>
+            <button onClick={()=>addPet( tempPet )}>Add</button> */}
         </>
     )
 }
