@@ -26,11 +26,11 @@ const AddPet = () => {
     const checkedIn = [
         {
             value: 'True',
-            label: 'True',
+            label: 'Checked In',
         },
         {
             value: 'False',
-            label: 'False',
+            label: 'Checked Out',
         },
     ];
 
