@@ -10,7 +10,7 @@ const OwnerDropdown = ( { owners, handleOwner }) => {
         <>
         <FormControl>
             <InputLabel>Owner</InputLabel>
-            <Select onChange={handleOwner} color="secondary" className={classes.dropdown} label="state">
+            <Select onChange={handleOwner} color="secondary" label="state">
                 <option value='' />
                 { owners.map( ( owner )=> <option value={owner.id} key={owner.id} >{owner.name}</option>) }
             </Select>
