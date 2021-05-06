@@ -19,7 +19,7 @@ const AddOwner = () => {
     return (
         <>
             <h2>Add Owner</h2>
-            <input type="text" placeholder="Owner" onChange={handleOwner} />
+            <input type="text" placeholder="Owner" value={tempOwner.name} onChange={handleOwner} />
             <Button
             type="submit"
             variant="contained"

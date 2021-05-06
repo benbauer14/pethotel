@@ -1,6 +1,6 @@
-const newpet = (state = {}, action) => {
+const newpet = (state = [], action) => {
     switch (action.type) {
-      case 'SET_NEWPET':
+      case 'SET_OWNERS':
         return action.payload;
       default:
         return state;

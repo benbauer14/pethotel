@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Typography, Button } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField';
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         width: '20ch',
         },
-      },
+    },
     }));
 
 const AddPet = () => {
@@ -22,6 +22,10 @@ const AddPet = () => {
     const dispatch = useDispatch();
     //set local state for pet object
     const [ tempPet, setTempPet ] = useState({});
+    //run GET call on load for owner dropdown
+    useEffect( ()=>{
+        dispatch( { type: 'FETCH_OWNERS' } )
+    } )
 
     //for the checked in option
     const checkedIn = [
