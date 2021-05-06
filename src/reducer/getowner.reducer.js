@@ -1,4 +1,4 @@
-const pets = (state = {}, action) => {
+const getOwner = (state = {}, action) => {
     switch (action.type) {
       case 'SET_OWNERS':
         console.log(action)
@@ -9,4 +9,4 @@ const pets = (state = {}, action) => {
   };
   
 
-  export default pets;
+  export default getOwner;
