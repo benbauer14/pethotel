@@ -1,7 +1,7 @@
 
 const getOwner = (state = {}, action) => {
     switch (action.type) {
-      case 'SET_OWNERS':
+      case 'FETCH_OWNERS':
         console.log(action)
         return action.payload;
       default:
