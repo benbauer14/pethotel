@@ -1,8 +1,21 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Typography, Textfield, Button } from '@material-ui/core'
+import { Typography, Button } from '@material-ui/core'
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: '25ch',
+        },
+      },
+    }));
 
 const AddPet = () => {
+    // for styles
+    const classes = useStyles();
     //to dispatch
     const dispatch = useDispatch();
     //set local state for pet object
@@ -33,6 +46,19 @@ const AddPet = () => {
     return (
         <>
             <input type="text" placeholder="Pet Name" onChange={handlePetName} />
+            <form className={classes.root} noValidate>
+            <TextField
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    size= 'medium'
+                    fullwidth
+                    id="petname"
+                    label="Pet Name"
+                    autoFocus
+                    onChange={handlePetName}
+                />
+                </form>
             <input type="text" placeholder="Pet Color" onChange={handlePetColor} />
             <input type="text" placeholder="Pet Breed" onChange={handlePetBreed} />
             <select onChange={handleOwner}>
