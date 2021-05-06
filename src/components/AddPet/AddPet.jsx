@@ -27,11 +27,11 @@ const AddPet = () => {
     const checkedIn = [
         {
             value: 'True',
-            label: 'True',
+            label: 'Checked In',
         },
         {
             value: 'False',
-            label: 'False',
+            label: 'Checked Out',
         },
     ];
     //handle inputs
@@ -69,11 +69,13 @@ const AddPet = () => {
     return (
         <>
             <form className={classes.root} noValidate>
+
             <OwnerDropdown
                     owners ={owners}
                     handleOwner={handleOwner}
                 />
             <TextField
+
                     variant="outlined"
                     margin="normal"
                     required
@@ -106,22 +108,6 @@ const AddPet = () => {
                     autoFocus
                     onChange={handlePetBreed}
                 />
-
-                <TextField
-                    id="pet-checked-in"
-                    select
-                    label="Select"
-                    value={checkedIn}
-                    onChange={handleCheckIn}
-                    helperText="Pet Checked In"
-                    variant="outlined"
-                >
-                    {checkedIn.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                        {option.label}
-                        </MenuItem>
-                    ))}
-                </TextField>
                 <Button
                     type="submit"
                     variant="contained"
