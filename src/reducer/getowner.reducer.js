@@ -1,11 +1,13 @@
-const newpet = (state = {}, action) => {
+
+const getOwner = (state = {}, action) => {
     switch (action.type) {
-      case 'SET_NEWPET':
+      case 'SET_OWNERS':
+        console.log(action)
         return action.payload;
       default:
         return state;
     }
   };
   
+  export default getOwner;
 
-  export default newpet;
