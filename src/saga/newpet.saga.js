@@ -6,6 +6,7 @@ function* postNewPet(action) {
 
   try {
     yield axios.post('/api/pets/', action.payload);
+    yield put({ type:'FETCH_PET' })
   } catch (error) {
     console.log('Pet POST request failed', error);
   }
