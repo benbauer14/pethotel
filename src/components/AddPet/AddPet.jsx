@@ -107,6 +107,7 @@ const AddPet = () => {
                     autoFocus
                     onChange={handlePetBreed}
                 />
+
                 <TextField
                     id="pet-checked-in"
                     select
@@ -121,6 +122,7 @@ const AddPet = () => {
                         </MenuItem>
                     ))}
                 </TextField>
+
                 </form>
                 <Button
                     type="submit"
