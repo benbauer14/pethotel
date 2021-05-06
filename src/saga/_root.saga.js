@@ -3,7 +3,7 @@ import newpetSaga from './newpet.saga'
 import pets from './pets.saga'
 import newOwnerSaga from './newowner.saga'
 import updatecheckedin from './updatecheckedin.saga'
-import getOwners from './getowner.saga'
+import getOwner from './getowner.saga'
 
 export default function* rootSaga() {
     yield all([
@@ -11,7 +11,6 @@ export default function* rootSaga() {
         pets(),
         newOwnerSaga(), 
         updatecheckedin(),
-        getOwners()
+        getOwner()
     ]);
-  }
-  
+}
