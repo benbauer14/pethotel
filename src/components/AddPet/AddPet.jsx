@@ -25,7 +25,7 @@ const AddPet = () => {
     //run GET call on load for owner dropdown
     useEffect( ()=>{
         dispatch( { type: 'FETCH_OWNERS' } )
-    } )
+    }, [] )
 
     //for the checked in option
     const checkedIn = [
