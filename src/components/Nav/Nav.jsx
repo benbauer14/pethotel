@@ -7,7 +7,7 @@ function Nav (){
             <h1>Pet Hotel</h1>
             <div className="navbar">
                 <div className="navBox">
-                    <Link to="/pet">
+                    <Link to="/">
                         <p>Dashboard</p>
                     </Link>
                 </div>
