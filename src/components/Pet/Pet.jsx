@@ -18,11 +18,7 @@ const dispatch = useDispatch()
     { field: 'actions', headerName: 'Actions', width: 200 },
   ];
   
-  const rows = [
-    { id: '1', owner: 'Chris', pet: 'Charlie', breed: 'Shih-tzu', color: 'Black', checkedin: 'no', actions: 'Delete | Check Out'},
-    { id: '2', owner: 'Chris', pet: 'Thorin', breed: 'Rabbit', color: 'White', checkedin: 'no', actions: 'Delete | Check Out'},
-    { id: '3', owner: 'asdf', pet: 'sdf', breed: 'sdfasdf', color: 'asdf', checkedin: 'no', actions: 'Delete | Check Out'},
-  ];
+  const rows = pets;
 
   const getPets = () => {
     dispatch({type:'FETCH_PET'})
@@ -30,17 +26,18 @@ const dispatch = useDispatch()
 
   useEffect(() => {getPets();}, []);
 
-  return (
-    <>
-    <div style={{ height: 400, width: '100%' }}>
-      <AddPet />
-      <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
-    </div>
-    <div>
-      {JSON.stringify(pets)}
-    </div>
-    </>
-  );
+  if(!Array.isArray(pets)){
+    return(<p>Loading...</p>)
+  }else{
+    return (
+      <>
+      <div style={{ height: 400, width: '100%' }}>
+        <AddPet />
+        <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+      </div>
+      </>
+    );
+  }
 }
 
 export default Pet;
