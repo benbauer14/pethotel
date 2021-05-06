@@ -64,9 +64,7 @@ const AddPet = () => {
     }
 
     //get owner data from redux for dropdown
-    const owners = useSelector( ( store )=>{
-        return store.ownerReducer
-    })
+    const owners = useSelector( ( store )=> store.ownerReducer )
 
     //    { id: '1', owner: 'Chris', pet: 'Charlie', breed: 'Shih-tzu', color: 'Black', checkedin: 'no', actions: 'Delete | Check Out'},
 
