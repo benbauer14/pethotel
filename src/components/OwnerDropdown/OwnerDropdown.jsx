@@ -6,7 +6,11 @@ import {
     } from '@material-ui/core/';
 
 const OwnerDropdown = ( { owners, handleOwner }) => {
-    return (
+
+    if(!Array.isArray(owners)){
+        return(<p>Loading...</p>)
+    }else{
+        return (
         <>
         <FormControl>
             <InputLabel>Owner</InputLabel>
@@ -16,7 +20,8 @@ const OwnerDropdown = ( { owners, handleOwner }) => {
             </Select>
         </FormControl>
         </>
-    )
+        )
+}
 }
 
 export default OwnerDropdown
