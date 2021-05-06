@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { Typography, Textfield, Button } from '@material-ui/core'
 
 const AddPet = () => {
     //to dispatch
@@ -23,8 +24,6 @@ const AddPet = () => {
         setTempPet( {...tempPet, owner: event.target.value } )
     }
 
-
-
     const addPet = ( petObject ) =>{
         dispatch({ type: 'POST_NEWPET', payload: petObject })
     }
@@ -34,8 +33,8 @@ const AddPet = () => {
     return (
         <>
             <input type="text" placeholder="Pet Name" onChange={handlePetName} />
-            <input type="text" placeholder="Pet Name" onChange={handlePetColor} />
-            <input type="text" placeholder="Pet Name" onChange={handlePetBreed} />
+            <input type="text" placeholder="Pet Color" onChange={handlePetColor} />
+            <input type="text" placeholder="Pet Breed" onChange={handlePetBreed} />
             <select onChange={handleOwner}>
                 <option value=''></option>
                 <option>Joel</option>
@@ -43,6 +42,14 @@ const AddPet = () => {
                 <option>Pat</option>
             </select>
             <button onClick={()=>addPet( tempPet )}>Add</button>
+            <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            onClick={()=>addPet( tempPet )}
+            >
+            Add
+            </Button>
         </>
     )
 }
