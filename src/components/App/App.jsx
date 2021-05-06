@@ -12,7 +12,7 @@ function App() {
         <Switch>
           <Route
             exact
-            path="/pet"
+            path="/"
           >
             <Pet />
           </Route>
