@@ -4,6 +4,7 @@ import pets from './pets.saga';
 import newOwnerSaga from './newowner.saga';
 import updatecheckedin from './updatecheckedin.saga';
 import getOwner from './getowner.saga';
+import deletePet from './delete.saga';
 
 export default function* rootSaga() {
     yield all([
@@ -11,6 +12,7 @@ export default function* rootSaga() {
         pets(),
         newOwnerSaga(), 
         updatecheckedin(),
-        getOwner()
+        getOwner(),
+        deletePet()
     ]);
 }
