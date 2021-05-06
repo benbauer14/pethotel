@@ -58,6 +58,28 @@ const AddPet = () => {
                     autoFocus
                     onChange={handlePetName}
                 />
+                <TextField
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    size= 'medium'
+                    fullwidth
+                    id="petcolor"
+                    label="Pet Color"
+                    autoFocus
+                    onChange={handlePetColor}
+                />
+                <TextField
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    size= 'medium'
+                    fullwidth
+                    id="petbreed"
+                    label="Pet Breed"
+                    autoFocus
+                    onChange={handlePetBreed}
+                />
                 </form>
             <input type="text" placeholder="Pet Color" onChange={handlePetColor} />
             <input type="text" placeholder="Pet Breed" onChange={handlePetBreed} />
