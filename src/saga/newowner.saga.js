@@ -7,6 +7,7 @@ function* postNewOwner(action) {
 
   try {
     yield axios.post( '/api/owners/', action.payload );
+    yield put({ type:'FETCH_OWNERS'})
   } catch (error) {
     console.log('Owner POST request failed', error);
   }
