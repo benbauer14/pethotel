@@ -63,18 +63,7 @@ const AddPet = () => {
     return (
         <>
             <form className={classes.root} noValidate>
-            <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    size= 'medium'
-                    fullwidth
-                    id="owner"
-                    label="Owner"
-                    autoFocus
-                    onChange={handleOwner}
-                />
-            <TextField
+                <TextField
                     variant="outlined"
                     margin="normal"
                     required
@@ -107,22 +96,6 @@ const AddPet = () => {
                     autoFocus
                     onChange={handlePetBreed}
                 />
-
-                <TextField
-                    id="pet-checked-in"
-                    select
-                    label="Select"
-                    value={checkedIn}
-                    onChange={handleCheckIn}
-                    helperText="Pet Checked In"
-                    variant="outlined"
-                >
-                    {checkedIn.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                        {option.label}
-                        </MenuItem>
-                    ))}
-                </TextField>
                 <Button
                     type="submit"
                     variant="contained"
