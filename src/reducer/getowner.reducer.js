@@ -1,3 +1,4 @@
+
 const newpet = (state = [], action) => {
     switch (action.type) {
       case 'SET_OWNERS':
@@ -7,5 +8,5 @@ const newpet = (state = [], action) => {
     }
   };
   
+  export default getOwner;
 
-  export default newpet;
