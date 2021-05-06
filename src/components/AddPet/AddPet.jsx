@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Typography, Button } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
+import OwnerDropdown from '../OwnerDropdown/OwnerDropdown';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,7 +34,7 @@ const AddPet = () => {
             label: 'Checked Out',
         },
     ];
-
+    //handle inputs
     const handlePetName = ( event ) =>{
         setTempPet( {...tempPet, pet: event.target.value } )
     }
@@ -58,12 +59,23 @@ const AddPet = () => {
         dispatch({ type: 'POST_NEWPET', payload: petObject })
     }
 
+    //get owner data from redux for dropdown
+    const owners = useSelector( ( store )=>{
+        return store.ownerReducer
+    })
+
     //    { id: '1', owner: 'Chris', pet: 'Charlie', breed: 'Shih-tzu', color: 'Black', checkedin: 'no', actions: 'Delete | Check Out'},
 
     return (
         <>
             <form className={classes.root} noValidate>
-                <TextField
+
+            <OwnerDropdown
+                    owners ={owners}
+                    handleOwner={handleOwner}
+                />
+            <TextField
+
                     variant="outlined"
                     margin="normal"
                     required

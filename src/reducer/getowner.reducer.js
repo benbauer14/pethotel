@@ -1,3 +1,4 @@
+
 const getOwner = (state = {}, action) => {
     switch (action.type) {
       case 'SET_OWNERS':
@@ -8,5 +9,5 @@ const getOwner = (state = {}, action) => {
     }
   };
   
-
   export default getOwner;
+

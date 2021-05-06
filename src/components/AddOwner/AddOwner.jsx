@@ -16,8 +16,6 @@ const AddOwner = () => {
         dispatch( { type:'POST_NEWOWNER', payload: ownerObject })
     }
 
-
-
     return (
         <>
             <h2>Add Owner</h2>
