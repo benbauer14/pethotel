@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
         margin: theme.spacing(1),
-        width: '25ch',
+        width: '20ch',
         },
       },
     }));
@@ -114,6 +114,7 @@ const AddPet = () => {
                     value={checkedIn}
                     onChange={handleCheckIn}
                     helperText="Pet Checked In"
+                    variant="outlined"
                 >
                     {checkedIn.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
