@@ -35,7 +35,7 @@ function Owner(props) {
             <>
                 <div style={{ height: 400, width: '100%' }}>
                     <AddOwner />
-                    <p>{JSON.stringify(owners)}</p>
+                    {/* <p>{JSON.stringify(owners)}</p> */}
                     <DataGrid rows={owners} columns={columns} pageSize={5} checkboxSelection />
                     
                 </div>
