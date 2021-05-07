@@ -19,16 +19,28 @@ function Owner(props) {
     //data grid columns
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
-        { field: 'owner', headerName: 'Owner', width: 130 },
+        { field: 'owner', headerName: 'Name', width: 130 },
     ];
-
+    
+    if(!Array.isArray(owners)){
     return (
-    <div>
-        <h2>This is Owner</h2>
-        <AddOwner />
-        <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
-    </div>
-    );
+        <>
+            <AddOwner />
+            <p>Loading ...</p>
+        </>
+    )
+    } else {
+        return ( 
+            <>
+                <div style={{ height: 400, width: '100%' }}>
+                    <AddOwner />
+                    <p>{JSON.stringify(owners)}</p>
+                    <DataGrid rows={owners} columns={columns} pageSize={5} checkboxSelection />
+                    
+                </div>
+            </>
+        )
+    }
 }
 
 export default Owner;
