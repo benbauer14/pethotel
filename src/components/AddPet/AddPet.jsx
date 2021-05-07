@@ -74,6 +74,7 @@ const AddPet = () => {
 
             <OwnerDropdown
                     owners ={owners}
+                    fullwidth
                     handleOwner={handleOwner}
                 />
             <TextField

@@ -11,7 +11,7 @@ const dispatch = useDispatch()
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 90 },
-    { field: 'owner', headerName: 'Owner', width: 130 },
+    { field: 'name', headerName: 'Owner', width: 130 },
     { field: 'pet', headerName: 'Pet', width: 130 },
     { field: 'breed', headerName: 'Breed', width: 130 },
     { field: 'color', headerName: 'Color', width: 130 },
