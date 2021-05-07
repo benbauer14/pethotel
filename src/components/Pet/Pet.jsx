@@ -59,7 +59,7 @@ const dispatch = useDispatch()
 
         };
 
-        if(pets.checkedin = false){
+        if(pets.checkedin === false){
         return <><p><button onClick={onClick}>CheckIn</button></p><p><button onClick={onDelete}>Delete</button></p></>;
         }else{
           return <><p><button onClick={onClick}>CheckOut</button></p><p><button onClick={onDelete}>Delete</button></p></>;
