@@ -79,7 +79,7 @@ const dispatch = useDispatch()
   if(!Array.isArray(pets)){
     return(
       <>
-        <AddPaint />
+        <AddPet />
         <p>Loading...</p>
       </>
     )
