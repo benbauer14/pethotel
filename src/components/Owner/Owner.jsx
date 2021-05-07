@@ -19,7 +19,8 @@ function Owner(props) {
     //data grid columns
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
-        { field: 'owner', headerName: 'Name', width: 130 },
+        //{ field: 'count', headerName: 'Count', width: 90 },
+        { field: 'name', headerName: 'Name', width: 130 },
     ];
     
     if(!Array.isArray(owners)){
