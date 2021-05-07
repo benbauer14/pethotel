@@ -77,7 +77,12 @@ const dispatch = useDispatch()
   useEffect(() => {getPets();}, []);
 
   if(!Array.isArray(pets)){
-    return(<p>Loading...</p>)
+    return(
+      <>
+        <AddPaint />
+        <p>Loading...</p>
+      </>
+    )
   }else{
 
     return (
