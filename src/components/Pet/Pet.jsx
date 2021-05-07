@@ -55,7 +55,7 @@ const dispatch = useDispatch()
             thisRow[f] = params.getValue(f);
           });
 
-            return dispatch({type: 'DELETE_PET', payload: {id: thisRow.id} })
+            return dispatch({type: 'DELETE_PET', payload: {id: thisRow.id, pet: thisRow.pet} })
 
         };
 
@@ -81,7 +81,12 @@ const dispatch = useDispatch()
   useEffect(() => {getPets();}, []);
 
   if(!Array.isArray(pets)){
-    return(<p>Loading...</p>)
+    return(
+      <>
+        <AddPet />
+        <p>Loading...</p>
+      </>
+    )
   }else{
 
     return (
